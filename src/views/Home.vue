@@ -4,8 +4,7 @@
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Pokemons from '@/components/Pokemons.vue';
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand href="#">Menu</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,10 +15,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue } from 'vue-property-decorator';
+
 export default class Menu extends Vue {
   
-};
+}
 </script>
 
 <style lang="scss" scoped>
