@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
       <b-navbar-brand href="#">
-        <img src="poke_icon.png" alt="Picachu" class="logo">
+        Pokedex
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
