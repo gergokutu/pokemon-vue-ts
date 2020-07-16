@@ -1,14 +1,15 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">Menu</b-navbar-brand>
-
+    <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
+      <b-navbar-brand href="#">
+        <img src="poke_icon.png" alt="Picachu" class="logo">
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="/about">About</b-nav-item>
+          <b-nav-item to="/categories">Categories</b-nav-item>
+          <b-nav-item to="/random">Random</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -26,5 +27,10 @@ export default class Menu extends Vue {
 <style lang="scss" scoped>
 #nav a.router-link-exact-active {
     color: #ffffff;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
 }
 </style>
