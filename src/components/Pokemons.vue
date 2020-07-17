@@ -1,16 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <PokeCard />
-    <PokeCard />
-    <PokeCard />
-    <PokeCard />
+    <b-row>
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+    </b-row>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import PokeCard from '@/components/PokeCard.vue'
+import { Component, Prop, Vue } from "vue-property-decorator";
+import PokeCard from "@/components/PokeCard.vue";
 
 @Component({
   components: {
@@ -23,5 +25,4 @@ export default class Pokemons extends Vue {
 </script>
 
 <style scoped lang="scss">
-
 </style>
