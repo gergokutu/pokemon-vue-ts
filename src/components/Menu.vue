@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
-      <b-navbar-brand href="#">
+      <b-navbar-brand href="#" class="brand">
         Pokedex
         <img src="poke_icon.png" alt="Picachu" class="logo">
       </b-navbar-brand>
@@ -30,6 +30,10 @@ export default class Menu extends Vue {
 <style lang="scss" scoped>
 #nav a.router-link-exact-active {
     color: #ffffff;
+}
+
+.brand {
+  cursor: default;
 }
 
 .logo {
