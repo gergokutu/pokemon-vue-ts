@@ -14,6 +14,11 @@ Vue.use(VueRouter)
     path: '/random',
     name: 'Random',
     component: () => import('../views/Random.vue')
+  },
+  {
+    path: '/categories',
+    name: 'Categories',
+    component: () => import('../views/Categories.vue')
   }
 ]
 
