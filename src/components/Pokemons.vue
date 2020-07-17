@@ -36,7 +36,7 @@ export default class Pokemons extends Vue {
   flex-wrap: wrap;
   margin-right: 0px !important;
   margin-left: 15% !important;
-  // margin-top: 50px !important;
+  margin-top: 5% !important;
   justify-content: center !important;
   width: 70%;
 }
