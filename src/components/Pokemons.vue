@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div class="card-container">
-      <!-- <PokeCard name="Pocok" />
+      <PokeCard name="Pocok" />
       <PokeCard />
       <PokeCard />
       <PokeCard />
@@ -11,7 +11,7 @@
       <PokeCard />
       <PokeCard />
       <PokeCard />
-      <PokeCard /> -->
+      <PokeCard />
     </div>
   </div>
 </template>
