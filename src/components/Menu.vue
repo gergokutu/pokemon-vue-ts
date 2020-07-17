@@ -3,7 +3,7 @@
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
       <b-navbar-brand href="#" class="brand">
         Pokedex
-        <img src="poke_icon.png" alt="Picachu" class="logo">
+        <img src="@/assets/poke_icon.png" alt="Picachu" class="logo">
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -44,7 +44,7 @@ export default class Menu extends Vue {
 @media (min-width: 576px) { 
   #nav-collapse {
     position: absolute;
-    right: 100px;
+    right: 70px;
   }
 }
 
