@@ -44,7 +44,7 @@ export default class Menu extends Vue {
 @media (min-width: 576px) { 
   #nav-collapse {
     position: absolute;
-    right: 10px;
+    right: 100px;
   }
 }
 

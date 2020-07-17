@@ -1,12 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <b-row>
+    <div class="card-container">
       <PokeCard />
       <PokeCard />
       <PokeCard />
       <PokeCard />
-    </b-row>
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+      <PokeCard />
+    </div>
   </div>
 </template>
 
@@ -25,4 +31,13 @@ export default class Pokemons extends Vue {
 </script>
 
 <style scoped lang="scss">
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px !important;
+  margin-left: 15% !important;
+  // margin-top: 50px !important;
+  justify-content: center !important;
+  width: 70%;
+}
 </style>
