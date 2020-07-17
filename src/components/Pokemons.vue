@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div class="card-container">
+      <!-- <PokeCard name="Pocok" />
       <PokeCard />
       <PokeCard />
       <PokeCard />
@@ -10,8 +11,7 @@
       <PokeCard />
       <PokeCard />
       <PokeCard />
-      <PokeCard />
-      <PokeCard />
+      <PokeCard /> -->
     </div>
   </div>
 </template>
@@ -34,10 +34,10 @@ export default class Pokemons extends Vue {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 0px !important;
-  margin-left: 15% !important;
-  margin-top: 5% !important;
-  justify-content: center !important;
+  margin-right: 0px;
+  margin-left: 15%;
+  margin-top: 5%;
+  justify-content: center;
   width: 70%;
 }
 </style>

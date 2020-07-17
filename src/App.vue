@@ -18,7 +18,7 @@ import Menu from '@/components/Menu.vue';
     Menu
   }
 })
-export default class Home extends Vue {
+export default class App extends Vue {
   
 }
 </script>
