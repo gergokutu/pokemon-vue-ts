@@ -15,15 +15,10 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import PokeCard from '@/components/PokeCard.vue'
-// import pokesModule from '@/store/modules/pokesModule'
+import { IPokeCard } from '@/store/model'
 
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')
-
-interface Card {
-  name: string;
-  url: string;
-}
 
 @Component({
   components: {
@@ -35,7 +30,7 @@ export default class Pokemons extends Vue {
   @Prop() private msg!: string
 
   @pokesModule.State
-  public pokemons!: Array<Card>
+  public pokemons!: Array<IPokeCard>
 }
 </script>
 
