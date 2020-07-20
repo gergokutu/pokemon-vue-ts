@@ -35,7 +35,7 @@ export default class Pokemons extends Vue {
   @pokesModule.Action
   public loadPokemons!: () => void
 
-  mounted() {
+  created() {
     this.loadPokemons()
   }
 }
