@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <div class="card-container">
       <PokeCard
-        v-for="pokemon in pokemons"
+        v-for="pokemon in pokes"
         :key="pokemon.name"
         :name="pokemon.name"
         :url="pokemon.url"
@@ -15,9 +15,9 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import PokeCard from '@/components/PokeCard.vue';
-import { namespace } from 'vuex-class'
 
-const pokemons = namespace('pokemons')
+import { namespace } from 'vuex-class'
+const pokes = namespace('pokes')
 
 interface Card {
   name: string;
@@ -33,8 +33,8 @@ interface Card {
 export default class Pokemons extends Vue {
   @Prop() private msg!: string;
 
-  @pokemons.State
-  public pokemons!: Array<Card>
+  @pokes.State
+  public pokes!: Array<Card>
 }
 </script>
 
