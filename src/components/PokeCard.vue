@@ -25,14 +25,14 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class PokeCard extends Vue {
-  @Prop({ default: "John doe" }) readonly name!: string;
+  @Prop({ default: 'John doe' }) readonly name!: string;
 
   private showDetails(): void {
-    console.log("Show details");
+    console.log('Show details');
   }
 }
 </script>
