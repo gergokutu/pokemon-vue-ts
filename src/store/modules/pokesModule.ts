@@ -52,7 +52,7 @@ class PokesModule extends VuexModule {
   ]
 
   @MutationAction({ mutate: ['pokemons'] })
-  async loadPokemons() {
+  public async loadPokemons() {
     const pokemons = await fetchPokemons()
     return { pokemons }
   }

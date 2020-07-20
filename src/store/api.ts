@@ -8,7 +8,7 @@ export const apiCall = axios.create({
 
 export async function fetchPokemons(): Promise<IPokeCard[] | undefined> {
   try {
-    return axios.get(
+    return apiCall.get(
       '/pokemon?limit=10&offset=0'
     )
   } catch (err) {

@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <div class="card-container">
       <PokeCard
-        v-for="pokemon in pokemons"
+        v-for="pokemon in pokemons.data.results"
         :key="pokemon.name"
         :name="pokemon.name"
         :url="pokemon.url"
@@ -31,6 +31,13 @@ export default class Pokemons extends Vue {
 
   @pokesModule.State
   public pokemons!: Array<IPokeCard>
+
+  @pokesModule.Action
+  public loadPokemons!: () => void
+
+  mounted() {
+    this.loadPokemons()
+  }
 }
 </script>
 
