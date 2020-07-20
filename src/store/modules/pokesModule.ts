@@ -1,13 +1,10 @@
 import { VuexModule, Module, MutationAction } from 'vuex-module-decorators'
 import { IPokeCard } from '../model'
 import { fetchPokemons } from '../api'
-import store from '@/store'
 
 @Module({
   namespaced: true,
-  name: 'pokesModule',
-  // store,
-  // dynamic: true
+  name: 'pokesModule'
 })
 
 class PokesModule extends VuexModule {

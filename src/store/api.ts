@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 // 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
 import { IPokeCard } from './model'
 
