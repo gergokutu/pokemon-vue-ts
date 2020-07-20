@@ -16,18 +16,25 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import PokeCard from '@/components/PokeCard.vue';
 import { namespace } from 'vuex-class'
+
 const pokemons = namespace('pokemons')
+
+interface Card {
+  name: string;
+  url: string;
+}
 
 @Component({
   components: {
     PokeCard
   }
 })
+
 export default class Pokemons extends Vue {
   @Prop() private msg!: string;
 
   @pokemons.State
-  public pokemons!: Array<object>
+  public pokemons!: Array<Card>
 }
 </script>
 
