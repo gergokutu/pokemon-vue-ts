@@ -2,11 +2,11 @@
   <div class="card">
     <b-col>
       <b-card
-        img-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        img-src="@/assets/poke_card.png"
         img-alt="Image"
         img-top
         tag="article"
-        style="min-width: 12rem;"
+        style="max-width: 10rem;"
         class="mb-2"
       >
         <b-card-text>{{ name }}</b-card-text>
