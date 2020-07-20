@@ -1,4 +1,4 @@
-import { VuexModule, Module, getModule, MutationAction } from 'vuex-module-decorators'
+import { VuexModule, Module, MutationAction } from 'vuex-module-decorators'
 import { IPokeCard } from '../model'
 import { fetchPokemons } from '../api'
 import store from '@/store'
@@ -6,7 +6,8 @@ import store from '@/store'
 @Module({
   namespaced: true,
   name: 'pokesModule',
-  store
+  // store,
+  // dynamic: true
 })
 
 class PokesModule extends VuexModule {
@@ -60,4 +61,4 @@ class PokesModule extends VuexModule {
   }
 }
 
-export default getModule(PokesModule)
+export default PokesModule
