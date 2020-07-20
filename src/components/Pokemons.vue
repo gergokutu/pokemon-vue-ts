@@ -2,14 +2,21 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div class="card-container">
-      <PokeCard name="Pocok" />
+      <PokeCard
+        v-for="pokemon in pokemons"
+        :key="pokemon.name"
+        :name="pokemon.name"
+        :url="pokemon.url"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import PokeCard from "@/components/PokeCard.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import PokeCard from '@/components/PokeCard.vue';
+import { namespace } from 'vuex-class'
+const pokemons = namespace('pokemons')
 
 @Component({
   components: {
@@ -18,6 +25,9 @@ import PokeCard from "@/components/PokeCard.vue";
 })
 export default class Pokemons extends Vue {
   @Prop() private msg!: string;
+
+  @pokemons.State
+  public pokemons!: Array<object>
 }
 </script>
 

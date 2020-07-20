@@ -15,7 +15,7 @@
           class="detail-button"
           href="#"
           variant="info"
-          @click="showDetails"
+          @click="showDetails(url)"
         >
           Details
         </b-button>
@@ -29,10 +29,11 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class PokeCard extends Vue {
-  @Prop({ default: 'John doe' }) readonly name!: string;
+  @Prop({ default: 'Pokemon' }) readonly name!: string;
+  @Prop({ default: 'No URL Ensured' }) readonly url!: string;
 
-  private showDetails(): void {
-    console.log('Show details');
+  private showDetails(url: string): void {
+    console.log('Show details:', url);
   }
 }
 </script>
