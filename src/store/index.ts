@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import pokeModule from '@/store/modules/pokes.ts'
+import pokesModule from '@/store/modules/pokesModule.ts'
 
 Vue.use(Vuex)
 
@@ -12,6 +12,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    pokeModule
+    pokesModule
   }
 })

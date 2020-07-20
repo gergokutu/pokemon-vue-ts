@@ -2,9 +2,9 @@ import axios from 'axios'
 import { VuexModule, Module, Mutation, Action } from 'vuex-module-decorators'
 import IPokeCard from '@/interfaces/IPokeCard'
 
-@Module({ namespaced: true, name: 'pokes' })
-class Pokes extends VuexModule {
-  public pokes: Array<IPokeCard> = [
+@Module({ namespaced: true, name: 'pokesModule' })
+class PokesModule extends VuexModule {
+  public pokemons: Array<IPokeCard> = [
     {
       "name": "unown1",
       "url": "https://pokeapi.co/api/v2/pokemon/201/"
@@ -47,4 +47,4 @@ class Pokes extends VuexModule {
     }
   ]
 }
-export default Pokes
+export default PokesModule
