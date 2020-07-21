@@ -9,7 +9,11 @@
         :url="pokemon.url"
       />
     </div>
-    <b-button @click="toggleShowDetails">Toggle</b-button>
+
+    <div class="details" v-else>
+      Details of...
+      <b-button @click="toggleShowDetails" variant="info">Toggle</b-button>
+    </div>
   </div>
 </template>
 

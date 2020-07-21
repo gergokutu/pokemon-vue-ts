@@ -25,15 +25,22 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+import { namespace } from 'vuex-class'
+const pokesModule = namespace('pokesModule')
 
 @Component
 export default class PokeCard extends Vue {
   @Prop({ default: 'Pokemon' }) readonly name!: string;
   @Prop({ default: 'No URL Ensured' }) readonly url!: string;
 
+  @pokesModule.Mutation
+  public toggleShowDetails!: () => void
+
   private showDetails(url: string): void {
-    console.log('Show details:', url);
+    console.log('Show details:', url)
+    this.toggleShowDetails()
   }
 }
 </script>
