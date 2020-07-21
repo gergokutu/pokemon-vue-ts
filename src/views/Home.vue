@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Pokemons msg="10 Pokemons come here..."/>
+    <Pokemons msg="Choose a Pokemon"/>
   </div>
 </template>
 

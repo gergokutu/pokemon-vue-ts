@@ -2,8 +2,6 @@
   <div id="app">
     <div id="nav">
       <Menu />
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
   </div>
@@ -18,7 +16,7 @@ import Menu from '@/components/Menu.vue';
     Menu
   }
 })
-export default class Home extends Vue {
+export default class App extends Vue {
   
 }
 </script>
