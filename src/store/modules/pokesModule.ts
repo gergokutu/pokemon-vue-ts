@@ -1,4 +1,4 @@
-import { VuexModule, Module, MutationAction } from 'vuex-module-decorators'
+import { VuexModule, Module, MutationAction, Mutation } from 'vuex-module-decorators'
 import { IPokeCard } from '../model'
 import { fetchPokemons, fetchDetails } from '../api'
 
@@ -51,6 +51,12 @@ class PokesModule extends VuexModule {
     // }
   ]
   public details = {}
+  public showDetails = false
+
+  @Mutation
+  public toggleShowDetails(): void {
+    this.showDetails = !this.showDetails
+  }
 
   // should return the same name... public pokemons
   @MutationAction({ mutate: ['pokemons', 'details'] })

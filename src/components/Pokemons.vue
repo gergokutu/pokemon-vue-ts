@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div class="card-container">
+    <div class="card-container" v-if="!showDetails">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
         :key="pokemon.name"
@@ -9,6 +9,7 @@
         :url="pokemon.url"
       />
     </div>
+    <b-button @click="toggleShowDetails">Toggle</b-button>
   </div>
 </template>
 
@@ -32,8 +33,14 @@ export default class Pokemons extends Vue {
   @pokesModule.State
   public pokemons!: Array<IPokeCard>
 
+  @pokesModule.State
+  public showDetails!: boolean
+
   @pokesModule.Action
   public loadPokemons!: () => void
+
+  @pokesModule.Mutation
+  public toggleShowDetails!: () => void
 
   created() {
     this.loadPokemons()
