@@ -11,8 +11,9 @@ class DetailsModule extends VuexModule {
 
   // should return the same name... public pokemons
   @MutationAction({ mutate: ['details'] })
-  public async loadDetails() {
-    const details = await fetchDetails()
+  public async loadDetails(url: string) {
+    const actualURL = url
+    const details = await fetchDetails(actualURL)
     // should return the same name... public pokemons
     return { details }
   }

@@ -42,14 +42,14 @@ export default class PokeCard extends Vue {
   private showDetails(url: string): void {
     console.log('Show details:', url)
     this.toggleShowDetails()
-    this.loadDetails()
+    this.loadDetails(url)
   }
 
   @detailsModule.State
   public details!: object
 
   @detailsModule.Action
-  public loadDetails!: () => void
+  public loadDetails!: (url: string) => void
 
   // created() {
   //   this.loadDetails()

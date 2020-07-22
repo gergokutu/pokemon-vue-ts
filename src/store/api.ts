@@ -17,8 +17,9 @@ export async function fetchPokemons(): Promise<AxiosResponse<IPokeCard> | undefi
   }
 }
 
-export async function fetchDetails() {
-  const url = 'https://pokeapi.co/api/v2/pokemon/1'
+export async function fetchDetails(actualURL: string) {
+  // const url = 'https://pokeapi.co/api/v2/pokemon/1'
+  const url = actualURL
   try {
     const response = await axios.get(
       url

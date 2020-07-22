@@ -30,8 +30,8 @@ export default class Details extends Vue {
   @detailsModule.State
   public details!: object
 
-  @detailsModule.Action
-  public loadDetails!: () => void
+  // @detailsModule.Action
+  // public loadDetails!: () => void
 
   // created() {
   //   this.loadDetails()
