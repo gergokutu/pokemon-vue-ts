@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import { IPokeCard } from './model'
+import { IPokeCard, Detail } from './model'
 
 export const apiCall = axios.create({
   baseURL: 'https://pokeapi.co/api/v2'
@@ -16,11 +16,23 @@ export async function fetchPokemons(): Promise<AxiosResponse<IPokeCard> | undefi
   }
 }
 
-export async function fetchDetails(actualURL: string) {
+export async function fetchDetails(actualURL: string): Promise<AxiosResponse<Detail> | undefined> {
   const url = actualURL
   try {
     const response = await axios.get(
       url
+    )
+    return response
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export async function randomPokemon(): Promise<AxiosResponse<Detail> | undefined> {
+  const randomID = Math.ceil(Math.random() * 10)
+  try {
+    const response = await apiCall.get(
+      `/pokemon/${randomID}`
     )
     return response
   } catch (err) {
