@@ -10,9 +10,9 @@
       />
     </div>
 
-    <div class="details" v-else>
-      Details of...
-      <b-button @click="toggleShowDetails" variant="info">Toggle</b-button>
+    <div class="details-container" v-else>
+      <Details />
+      <b-button @click="toggleShowDetails" variant="info">Back</b-button>
     </div>
   </div>
 </template>
@@ -21,13 +21,15 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import PokeCard from '@/components/PokeCard.vue'
 import { IPokeCard } from '@/store/model'
+import Details from '@/components/Details.vue'
 
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')
 
 @Component({
   components: {
-    PokeCard
+    PokeCard,
+    Details
   }
 })
 
