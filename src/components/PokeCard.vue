@@ -29,6 +29,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')
+const detailsModule = namespace('detailsModule')
 
 @Component
 export default class PokeCard extends Vue {
@@ -41,7 +42,18 @@ export default class PokeCard extends Vue {
   private showDetails(url: string): void {
     console.log('Show details:', url)
     this.toggleShowDetails()
+    this.loadDetails()
   }
+
+  @detailsModule.State
+  public details!: object
+
+  @detailsModule.Action
+  public loadDetails!: () => void
+
+  // created() {
+  //   this.loadDetails()
+  // }
 }
 </script>
 

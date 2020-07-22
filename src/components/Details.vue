@@ -1,7 +1,9 @@
 <template>
   <div>
-    DETAILS COMPONENT...
-    <b-button @click="toggle" variant="info">Back</b-button>
+    DETAILS COMPONENT... {{ details.data.name }}
+    <div>
+      <b-button @click="toggle" variant="info">Back</b-button>
+    </div>
   </div>
 </template>
 
@@ -31,9 +33,9 @@ export default class Details extends Vue {
   @detailsModule.Action
   public loadDetails!: () => void
 
-  created() {
-    this.loadDetails()
-  }
+  // created() {
+  //   this.loadDetails()
+  // }
 }
 </script>
 
