@@ -18,7 +18,7 @@
     </b-card>
   </div>
   <div class="next-button" @click="loadRandom">
-      Next
+      Another one, please!!!
     </div>
 </div>
   
@@ -66,7 +66,6 @@ export default class Random extends Vue {
 
 .next-button {
   margin-top: 10px;
-  font-weight: bold;
   font-size: 1.5rem;
 }
 
