@@ -12,7 +12,6 @@
 
     <div class="details-container" v-else>
       <Details />
-      <!-- <b-button @click="toggleShowDetails" variant="info">Back</b-button> -->
     </div>
   </div>
 </template>

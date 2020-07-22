@@ -50,10 +50,6 @@ export default class PokeCard extends Vue {
 
   @detailsModule.Action
   public loadDetails!: (url: string) => void
-
-  // created() {
-  //   this.loadDetails()
-  // }
 }
 </script>
 
