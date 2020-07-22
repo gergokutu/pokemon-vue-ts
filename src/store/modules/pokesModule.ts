@@ -55,6 +55,7 @@ class PokesModule extends VuexModule {
 
   @Mutation
   public toggleShowDetails(): void {
+    console.log('TOGGLED')
     this.showDetails = !this.showDetails
   }
 
