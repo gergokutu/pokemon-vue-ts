@@ -21,7 +21,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import PokeCard from '@/components/PokeCard.vue'
 import { IPokeCard } from '@/store/model'
 import Details from '@/components/Details.vue'
-
+git sta
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')
 
