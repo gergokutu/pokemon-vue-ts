@@ -6,7 +6,7 @@
         img-alt="Image"
         img-top
         tag="article"
-        style="min-width: 15rem;"
+        style="min-width: 10rem;"
         class="mb-2"
       >
         <b-card-text>
@@ -74,6 +74,6 @@ export default class RandomPokemon extends Vue {
 
 .name {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 </style>
