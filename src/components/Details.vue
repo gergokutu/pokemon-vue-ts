@@ -10,6 +10,7 @@ import { Vue, Component } from 'vue-property-decorator'
 
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')
+const detailsModule = namespace('detailsModule')
 
 @Component
 export default class Details extends Vue {
@@ -22,6 +23,16 @@ export default class Details extends Vue {
   private toggle(): void {
     console.log('TOGGLE 2')
     this.toggleShowDetails()
+  }
+
+  @detailsModule.State
+  public details!: object
+
+  @detailsModule.Action
+  public loadDetails!: () => void
+
+  created() {
+    this.loadDetails()
   }
 }
 </script>

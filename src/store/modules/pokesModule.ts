@@ -1,6 +1,6 @@
 import { VuexModule, Module, MutationAction, Mutation } from 'vuex-module-decorators'
 import { IPokeCard } from '../model'
-import { fetchPokemons, fetchDetails } from '../api'
+import { fetchPokemons } from '../api'
 
 @Module({
   namespaced: true,
@@ -50,7 +50,7 @@ class PokesModule extends VuexModule {
     //   url: "https://pokeapi.co/api/v2/pokemon/201/"
     // }
   ]
-  public details = {}
+  
   public showDetails = false
 
   @Mutation
@@ -60,12 +60,11 @@ class PokesModule extends VuexModule {
   }
 
   // should return the same name... public pokemons
-  @MutationAction({ mutate: ['pokemons', 'details'] })
+  @MutationAction({ mutate: ['pokemons'] })
   public async loadPokemons() {
     const pokemons = await fetchPokemons()
-    const details = await fetchDetails()
     // should return the same name... public pokemons
-    return { pokemons, details }
+    return { pokemons }
   }
 }
 
