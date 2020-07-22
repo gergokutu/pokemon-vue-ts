@@ -9,14 +9,14 @@
       class="mb-2"
     >
       <b-card-text>
-        <p>Name: {{ details.data.name }}</p>
+        <p class="name">Name: {{ details.data.name }}</p>
         <p>Base experience: {{ details.data.base_experience }}</p>
         <p>Weight: {{ details.data.weight }}</p>
         <p>Height: {{ details.data.height }}</p>
       </b-card-text>
     </b-card>
 
-    <div>
+    <div class="back-button">
       <b-button @click="toggle" variant="info">Back</b-button>
     </div>
   </div>
@@ -44,10 +44,17 @@ export default class Details extends Vue {
   }
 
   @detailsModule.State
-  // public details!: object
   public details!: Detail
 }
 </script>
 
 <style lang="scss" scoped>
+.name {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.back-button {
+  margin-top: 10px;
+}
 </style>

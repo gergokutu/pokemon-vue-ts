@@ -9,7 +9,7 @@
         style="max-width: 10rem;"
         class="mb-2"
       >
-        <b-card-text>{{ name }}</b-card-text>
+        <b-card-text>{{ name.toUpperCase() }}</b-card-text>
 
         <b-button
           class="detail-button"
@@ -57,6 +57,7 @@ export default class PokeCard extends Vue {
 .card {
   border: none;
   margin: 10px 0;
+  font-weight: bold;
 }
 .detail-button {
   background: #0b90a5;
