@@ -1,4 +1,4 @@
-import { VuexModule, Module, MutationAction } from 'vuex-module-decorators'
+import { VuexModule, Module, MutationAction, Mutation } from 'vuex-module-decorators'
 import { IPokeCard } from '../model'
 import { fetchPokemons } from '../api'
 
@@ -50,10 +50,20 @@ class PokesModule extends VuexModule {
     //   url: "https://pokeapi.co/api/v2/pokemon/201/"
     // }
   ]
+  
+  public showDetails = false
 
+  @Mutation
+  public toggleShowDetails(): void {
+    console.log('TOGGLED')
+    this.showDetails = !this.showDetails
+  }
+
+  // should return the same name... public pokemons
   @MutationAction({ mutate: ['pokemons'] })
   public async loadPokemons() {
     const pokemons = await fetchPokemons()
+    // should return the same name... public pokemons
     return { pokemons }
   }
 }
