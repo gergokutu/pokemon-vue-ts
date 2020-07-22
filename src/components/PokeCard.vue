@@ -9,7 +9,7 @@
         style="max-width: 10rem;"
         class="mb-2"
       >
-        <b-card-text>{{ name }}</b-card-text>
+        <b-card-text>{{ name.toUpperCase() }}</b-card-text>
 
         <b-button
           class="detail-button"
@@ -25,16 +25,31 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator'
+
+import { namespace } from 'vuex-class'
+const pokesModule = namespace('pokesModule')
+const detailsModule = namespace('detailsModule')
 
 @Component
 export default class PokeCard extends Vue {
   @Prop({ default: 'Pokemon' }) readonly name!: string;
   @Prop({ default: 'No URL Ensured' }) readonly url!: string;
 
+  @pokesModule.Mutation
+  public toggleShowDetails!: () => void
+
   private showDetails(url: string): void {
-    console.log('Show details:', url);
+    console.log('Show details:', url)
+    this.toggleShowDetails()
+    this.loadDetails(url)
   }
+
+  @detailsModule.State
+  public details!: object
+
+  @detailsModule.Action
+  public loadDetails!: (url: string) => void
 }
 </script>
 
@@ -42,6 +57,7 @@ export default class PokeCard extends Vue {
 .card {
   border: none;
   margin: 10px 0;
+  font-weight: bold;
 }
 .detail-button {
   background: #0b90a5;
