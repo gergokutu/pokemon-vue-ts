@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" @click="loadRandom">
     <div class="random-container">
       <b-card
         :img-src="details.data.sprites.front_default"
@@ -18,8 +18,8 @@
       </b-card>
     </div>
 
-    <div class="next-button" @click="loadRandom">
-      Another one, please!!!
+    <div class="next-button">
+      Click for the next one!!!
     </div>
   </div>
 </template>
@@ -60,6 +60,11 @@ export default class RandomPokemon extends Vue {
   margin-top: 5%;
   justify-content: center;
   width: 70%;
+}
+
+.random-container:hover {
+  color: green;
+  cursor: pointer;
 }
 
 .next-button {
