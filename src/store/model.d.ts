@@ -4,5 +4,5 @@ export interface IPokeCard {
 }
 
 export interface Detail {
-  data: object
+  data: object;
 }

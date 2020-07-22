@@ -55,15 +55,12 @@ class PokesModule extends VuexModule {
 
   @Mutation
   public toggleShowDetails(): void {
-    console.log('TOGGLED')
     this.showDetails = !this.showDetails
   }
 
-  // should return the same name... public pokemons
   @MutationAction({ mutate: ['pokemons'] })
   public async loadPokemons() {
     const pokemons = await fetchPokemons()
-    // should return the same name... public pokemons
     return { pokemons }
   }
 }

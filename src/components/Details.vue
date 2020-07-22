@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="details">
     <b-card
       :img-src="details.data.sprites.front_default"
       img-alt="Image"
@@ -39,7 +39,6 @@ export default class Details extends Vue {
   public toggleShowDetails!: () => void
 
   private toggle(): void {
-    console.log('TOGGLE 2')
     this.toggleShowDetails()
   }
 
