@@ -1,6 +1,5 @@
 <template>
 <div class="about">
-  <h1>Random Pokemon</h1>
   <div class="random-container">
     <b-card
       :img-src="details.data.sprites.front_default"
@@ -18,8 +17,8 @@
       </b-card-text>
     </b-card>
   </div>
-  <div class="back-button">
-      <b-button @click="refresh" variant="info">Back</b-button>
+  <div class="next-button" @click="loadRandom">
+      Next
     </div>
 </div>
   
@@ -65,7 +64,19 @@ export default class Random extends Vue {
   width: 70%;
 }
 
-.back-button {
+.next-button {
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.next-button:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 2rem;
 }
 </style>
