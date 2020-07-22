@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 v-if="!showDetails">{{ msg }}</h1>
     <div class="card-container" v-if="!showDetails">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
@@ -60,6 +60,16 @@ export default class Pokemons extends Vue {
   margin-right: 0px;
   margin-left: 15%;
   margin-top: 0;
+  justify-content: center;
+  width: 70%;
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 15%;
+  margin-top: 5%;
   justify-content: center;
   width: 70%;
 }
