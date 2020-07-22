@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import Pokemons from '@/components/Pokemons.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import Pokemons from '@/components/Pokemons.vue'
 
 @Component({
   components: {
