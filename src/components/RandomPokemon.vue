@@ -7,7 +7,7 @@
         img-top
         tag="article"
         style="min-width: 10rem;"
-        class="mb-2"
+        class="mb-2 border border-info"
       >
         <b-card-text>
           <p class="name">Name: {{ details.data.name }}</p>

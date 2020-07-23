@@ -7,7 +7,7 @@
         img-top
         tag="article"
         style="max-width: 10rem;"
-        class="mb-2"
+        class="mb-2 border border-info"
       >
         <b-card-text>{{ name.toUpperCase() }}</b-card-text>
 
