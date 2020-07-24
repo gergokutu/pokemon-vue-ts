@@ -1,13 +1,13 @@
 <template>
-  <div class="about">
+  <div class="about" @click="loadRandom">
     <div class="random-container">
       <b-card
         :img-src="details.data.sprites.front_default"
         img-alt="Image"
         img-top
         tag="article"
-        style="min-width: 15rem;"
-        class="mb-2"
+        style="min-width: 10rem;"
+        class="mb-2 border border-info"
       >
         <b-card-text>
           <p class="name">Name: {{ details.data.name }}</p>
@@ -18,8 +18,8 @@
       </b-card>
     </div>
 
-    <div class="next-button" @click="loadRandom">
-      Another one, please!!!
+    <div class="next-button">
+      Click for the next one!!!
     </div>
   </div>
 </template>
@@ -62,6 +62,11 @@ export default class RandomPokemon extends Vue {
   width: 70%;
 }
 
+.random-container:hover {
+  color: green;
+  cursor: pointer;
+}
+
 .next-button {
   margin-top: 10px;
   font-size: 1.5rem;
@@ -74,6 +79,6 @@ export default class RandomPokemon extends Vue {
 
 .name {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 </style>

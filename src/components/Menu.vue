@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menu">
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
       <b-navbar-brand href="#" class="brand">
         Pokedex
