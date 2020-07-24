@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1 v-if="!showDetails">{{ msg }}</h1>
-    <div>
+    <div v-show="!showDetails">
       <b-form-checkbox
         id="checkbox-1"
         v-model="status"
