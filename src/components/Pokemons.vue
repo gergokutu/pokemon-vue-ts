@@ -1,9 +1,30 @@
 <template>
   <div class="hello">
     <h1 v-if="!showDetails">{{ msg }}</h1>
-    <div class="card-container" v-if="!showDetails">
+    <div v-show="!showDetails">
+      <b-form-checkbox
+        id="checkbox-1"
+        v-model="status"
+        name="checkbox-1"
+        value="sorted"
+        unchecked-value="not_sorted"
+        @change="toggleSort"
+      >
+        Sort Pokemons (A-Z)
+      </b-form-checkbox>
+  </div>
+    <div class="card-container" v-if="!showDetails && !sorted">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
+        :key="pokemon.name"
+        :name="pokemon.name"
+        :url="pokemon.url"
+      />
+    </div>
+
+    <div class="card-container" v-else-if="!showDetails && sorted">
+      <PokeCard
+        v-for="pokemon in sortedPokemons"
         :key="pokemon.name"
         :name="pokemon.name"
         :url="pokemon.url"
@@ -35,8 +56,16 @@ const pokesModule = namespace('pokesModule')
 export default class Pokemons extends Vue {
   @Prop() private msg!: string
 
+  public sortedPokemons: Array<IPokeCard> = []
+  public sorted = false
+  public toggleSort() {
+    this.sorted = !this.sorted
+    const array = [...this.pokemons.data.results]
+    this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
+  }
+
   @pokesModule.State
-  public pokemons!: Array<IPokeCard>
+  public pokemons!: { data: { results: Array<IPokeCard> }}
 
   @pokesModule.State
   public showDetails!: boolean
