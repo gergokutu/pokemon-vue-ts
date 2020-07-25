@@ -52,6 +52,7 @@ class PokesModule extends VuexModule {
   ]
   
   public showDetails = false
+  // public sorted = false
 
   @Mutation
   public toggleShowDetails(): void {
