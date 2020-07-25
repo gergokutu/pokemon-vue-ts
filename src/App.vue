@@ -47,4 +47,8 @@ export default class App extends Vue {
     }
   }
 }
+
+#footer {
+  margin-top: 100px;
+}
 </style>
