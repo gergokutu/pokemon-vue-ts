@@ -12,7 +12,8 @@
       >
         Sort Pokemons (A-Z)
       </b-form-checkbox>
-  </div>
+    </div>
+    
     <div class="card-container" v-if="!showDetails && !sorted">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
