@@ -4,7 +4,6 @@
     <div v-show="!showDetails">
       <b-form-checkbox
         id="checkbox-1"
-        v-model="status"
         name="checkbox-1"
         value="sorted"
         unchecked-value="not_sorted"
