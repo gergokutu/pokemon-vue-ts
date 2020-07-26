@@ -8,7 +8,7 @@ import { Detail } from '../model'
 })
 
 class DetailsModule extends VuexModule {
-  public details: Detail = { data: {} }
+  public details: Detail = { data: { sprites: {  }}}
 
   @MutationAction({ mutate: ['details'] })
   public async loadDetails(url: string) {
