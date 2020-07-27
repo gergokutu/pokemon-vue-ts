@@ -26,7 +26,7 @@ import { PokeType } from '@/store/model'
 })
 export default class Categories extends Vue {
   @categoriesModule.State
-  public categories!: Array<PokeType>
+  public categories!: { data: { results: Array<PokeType> }}
 
   @categoriesModule.Action
   public loadCategories!: () => void
