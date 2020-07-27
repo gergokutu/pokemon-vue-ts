@@ -2,8 +2,8 @@
   <div class="footer">
     <b-navbar type="dark" variant="info" fixed="bottom">
       <b-navbar-nav>
-        <b-nav-item to="/">Home</b-nav-item>
-        <b-nav-item to="/categories">Categories</b-nav-item>
+        <b-nav-item to="/">Pokemons</b-nav-item>
+        <b-nav-item to="/categories">PokeTypes</b-nav-item>
         <b-nav-item to="/random">Random</b-nav-item>
       </b-navbar-nav>
 
