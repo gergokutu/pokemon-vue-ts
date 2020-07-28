@@ -1,24 +1,24 @@
 <template>
-  <div class="about" @click="loadRandom">
-    <div class="random-container">
-      <b-card
-        :img-src="details.data.sprites.front_default"
-        img-alt="Image"
-        img-top
-        tag="article"
-        style="min-width: 10rem;"
-        class="mb-2 border border-info"
-      >
-        <b-card-text>
-          <p class="name">Name: {{ details.data.name }}</p>
-          <p>Base experience: {{ details.data.base_experience }}</p>
-          <p>Weight: {{ details.data.weight }}</p>
-          <p>Height: {{ details.data.height }}</p>
-        </b-card-text>
-      </b-card>
-    </div>
+<div class="about">
+  <div class="random-container" @click="loadRandom">
+    <b-card
+      :img-src="details.data.sprites.front_default"
+      img-alt="Image"
+      img-top
+      tag="article"
+      style="min-width: 15rem;"
+      class="mb-2"
+    >
+      <b-card-text>
+        <p class="name">Name: {{ details.data.name }}</p>
+        <p>Base experience: {{ details.data.base_experience }}</p>
+        <p>Weight: {{ details.data.weight }}</p>
+        <p>Height: {{ details.data.height }}</p>
+      </b-card-text>
+    </b-card>
+  </div>
 
-    <div class="next-button">
+    <div class="next-button" @click="loadRandom">
       Click for the next one!!!
     </div>
   </div>
@@ -73,6 +73,11 @@ export default class RandomPokemon extends Vue {
 }
 
 .next-button:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.random-container:hover {
   color: green;
   cursor: pointer;
 }

@@ -29,7 +29,7 @@ export async function fetchDetails(actualURL: string): Promise<AxiosResponse<Det
 }
 
 export async function randomPokemon(): Promise<AxiosResponse<Detail> | undefined> {
-  const randomID = Math.ceil(Math.random() * 10)
+  const randomID = Math.ceil(Math.random() * 800)
   try {
     const response = await apiCall.get(
       `/pokemon/${randomID}`
