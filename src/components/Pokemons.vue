@@ -11,7 +11,17 @@
       >
         Sort Pokemons (A-Z)
       </b-form-checkbox>
+
+      <div class="pagination">
+        <b-button-group>
+          <b-button>Button 1</b-button>
+          <b-button>Button 2</b-button>
+          <b-button>Button 3</b-button>
+        </b-button-group>
     </div>
+    </div>
+
+    
     
     <div class="card-container" v-if="!showDetails && !sorted">
       <PokeCard
@@ -34,6 +44,8 @@
     <div class="details-container" v-else>
       <Details />
     </div>
+
+    
   </div>
 </template>
 
