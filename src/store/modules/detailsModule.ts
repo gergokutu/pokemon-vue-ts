@@ -1,5 +1,5 @@
 import { VuexModule, Module, MutationAction } from 'vuex-module-decorators'
-import { fetchDetails } from '../api'
+import { fetchDetails, fetchName } from '../api'
 import { Detail } from '../model'
 
 @Module({
@@ -14,6 +14,13 @@ class DetailsModule extends VuexModule {
   public async loadDetails(url: string) {
     const actualURL = url
     const details = await fetchDetails(actualURL)
+    return { details }
+  }
+
+  @MutationAction({ mutate: ['details'] })
+  public async loadName(url: string) {
+    const actualURL = url
+    const details = await fetchName(actualURL)
     return { details }
   }
 }
