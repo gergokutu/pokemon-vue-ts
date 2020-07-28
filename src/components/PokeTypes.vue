@@ -1,6 +1,6 @@
 <template>
   <div class="poke-types">
-    {{ name }}
+    {{ name }} {{ url }}
   </div>
 </template>
 
