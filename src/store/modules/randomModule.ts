@@ -4,7 +4,7 @@ import { Detail } from '../model'
 
 @Module({
   namespaced: true,
-  name: 'pokesModule'
+  name: 'randomModule'
 })
 
 class RandomModule extends VuexModule {
