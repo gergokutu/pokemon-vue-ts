@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <h1 v-if="!showDetails">{{ msg }}</h1>
+    <h2 v-if="!showDetails">{{ msg }}</h2>
     <div v-show="!showDetails" class="pagination-container">
-      <b-button>Prev</b-button>
+      
       <b-form-checkbox
         id="checkbox-1"
         name="checkbox-1"
@@ -12,7 +12,7 @@
       >
         Sort Pokemons (A-Z)
       </b-form-checkbox>
-      <b-button>Next</b-button>
+      
     </div>
 
     
@@ -39,7 +39,16 @@
       <Details />
     </div>
 
-    
+    <div class="nav-buttons-container">
+      <div class="nav-button">
+        <b-button size="lg">Prev</b-button>
+      </div>
+      <div class="nav-button">
+        <b-button size="lg">Next</b-button>
+      </div>
+      
+      
+    </div>  
   </div>
 </template>
 
@@ -113,13 +122,11 @@ export default class Pokemons extends Vue {
   margin-top: 20px;
 }
 
-.pagination-container {
+.nav-buttons-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 </style>
