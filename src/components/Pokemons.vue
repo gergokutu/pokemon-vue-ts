@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
     <h2 v-if="!showDetails">{{ msg }}</h2>
-    <div v-show="!showDetails" class="pagination-container">
-      
+    <div v-show="!showDetails">
       <b-form-checkbox
         id="checkbox-1"
         name="checkbox-1"
@@ -12,11 +11,8 @@
       >
         Sort Pokemons (A-Z)
       </b-form-checkbox>
-      
     </div>
 
-    
-    
     <div class="card-container" v-if="!showDetails && !sorted">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
@@ -39,7 +35,7 @@
       <Details />
     </div>
 
-    <div class="nav-buttons-container">
+    <div class="nav-buttons-container" v-show="!showDetails">
       <div class="nav-button">
         <b-button size="lg">Prev</b-button>
       </div>

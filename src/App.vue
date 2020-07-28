@@ -52,6 +52,5 @@ export default class App extends Vue {
 
 #footer {
   margin-top: 200px;
-  max-height: 10px;
 }
 </style>
