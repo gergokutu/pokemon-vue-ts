@@ -1,18 +1,12 @@
 <template>
   <div class="hello">
-    <h1 v-if="!showDetails">{{ msg }}</h1>
+    <h2 v-if="!showDetails">{{ msg }}</h2>
     <div v-show="!showDetails">
-      <b-form-checkbox
-        id="checkbox-1"
-        name="checkbox-1"
-        value="sorted"
-        unchecked-value="not_sorted"
-        @change="toggleSort"
-      >
+      <b-button @click="sortPokes" variant="warning">
         Sort Pokemons (A-Z)
-      </b-form-checkbox>
+      </b-button>
     </div>
-    
+
     <div class="card-container" v-if="!showDetails && !sorted">
       <PokeCard
         v-for="pokemon in pokemons.data.results"
@@ -34,6 +28,17 @@
     <div class="details-container" v-else>
       <Details />
     </div>
+
+    <div class="nav-buttons-container" v-show="!showDetails">
+      <div class="nav-button">
+        <b-button size="lg">Prev</b-button>
+      </div>
+      <div class="nav-button">
+        <b-button size="lg" @click="sortFalse(); loadPokemons(pokemons.data.next)">Next</b-button>
+      </div>
+      
+      
+    </div>  
   </div>
 </template>
 
@@ -58,7 +63,13 @@ export default class Pokemons extends Vue {
 
   public sortedPokemons: Array<IPokeCard> = []
   public sorted = false
-  public toggleSort() {
+  public sortFalse() {
+    this.sorted = false
+    // const array = [...this.pokemons.data.results]
+    // this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
+  }
+
+  public sortPokes() {
     this.sorted = !this.sorted
     const array = [...this.pokemons.data.results]
     this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
@@ -96,7 +107,7 @@ export default class Pokemons extends Vue {
 .details-container {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 0px;
+  margin-right: 0;
   margin-left: 15%;
   margin-top: 5%;
   justify-content: center;
@@ -105,5 +116,13 @@ export default class Pokemons extends Vue {
 
 .hello > h1 {
   margin-top: 20px;
+}
+
+.nav-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 </style>
