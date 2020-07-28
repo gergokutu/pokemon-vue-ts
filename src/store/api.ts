@@ -5,9 +5,9 @@ export const apiCall = axios.create({
   baseURL: 'https://pokeapi.co/api/v2'
 })
 
-export async function fetchPokemons(url = `/pokemon?limit=10&offset=0`): Promise<AxiosResponse<IPokeCard> | undefined> {
+export async function fetchPokemons(url = `https://pokeapi.co/api/v2/pokemon?limit=10&offset=0`): Promise<AxiosResponse<IPokeCard> | undefined> {
   try {
-    const response = await apiCall.get(
+    const response = await axios.get(
       url
     )
     return response

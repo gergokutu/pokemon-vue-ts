@@ -2,15 +2,9 @@
   <div class="hello">
     <h2 v-if="!showDetails">{{ msg }}</h2>
     <div v-show="!showDetails">
-      <b-form-checkbox
-        id="checkbox-1"
-        name="checkbox-1"
-        value="sorted"
-        unchecked-value="not_sorted"
-        @change="toggleSort"
-      >
+      <b-button @click="sortPokes" variant="warning">
         Sort Pokemons (A-Z)
-      </b-form-checkbox>
+      </b-button>
     </div>
 
     <div class="card-container" v-if="!showDetails && !sorted">
@@ -40,7 +34,7 @@
         <b-button size="lg">Prev</b-button>
       </div>
       <div class="nav-button">
-        <b-button size="lg">Next</b-button>
+        <b-button size="lg" @click="sortFalse(); loadPokemons(pokemons.data.next)">Next</b-button>
       </div>
       
       
@@ -69,7 +63,13 @@ export default class Pokemons extends Vue {
 
   public sortedPokemons: Array<IPokeCard> = []
   public sorted = false
-  public toggleSort() {
+  public sortFalse() {
+    this.sorted = false
+    // const array = [...this.pokemons.data.results]
+    // this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
+  }
+
+  public sortPokes() {
     this.sorted = !this.sorted
     const array = [...this.pokemons.data.results]
     this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
