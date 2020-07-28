@@ -2,6 +2,7 @@
   <div class="card">
     <b-col>
       <b-card
+        img-height="175px"
         img-src="@/assets/poke_card.png"
         img-alt="Image"
         img-top

@@ -3,7 +3,9 @@
     <div id="nav">
       <Menu />
     </div>
+
     <router-view/>
+
     <div id="footer">
       <Footer />
     </div>
