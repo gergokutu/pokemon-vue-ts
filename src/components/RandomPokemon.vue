@@ -19,7 +19,7 @@
   </div>
 
     <div class="next-button" @click="loadRandom">
-      Click for the next one!!!
+      <b-button variant="info">Randomize</b-button>
     </div>
   </div>
 </template>
