@@ -65,8 +65,6 @@ export default class Pokemons extends Vue {
   public sorted = false
   public sortFalse() {
     this.sorted = false
-    // const array = [...this.pokemons.data.results]
-    // this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
   }
 
   public sortPokes() {
@@ -83,9 +81,6 @@ export default class Pokemons extends Vue {
 
   @pokesModule.Action
   public loadPokemons!: () => void
-
-  // @pokesModule.Mutation
-  // public toggleShowDetails!: () => void
 
   created() {
     this.loadPokemons()
