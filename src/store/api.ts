@@ -28,8 +28,21 @@ export async function fetchDetails(actualURL: string): Promise<AxiosResponse<Det
   }
 }
 
+// not used anywhere > serach bar needed!!!
+// export async function fetchName(actualURL = 'pikachu'): Promise<AxiosResponse<Detail> | undefined> {
+//   const url = `https://pokeapi.co/api/v2/pokemon/${actualURL}`
+//   try {
+//     const response = await axios.get(
+//       url
+//     )
+//     return response
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
+
 export async function randomPokemon(): Promise<AxiosResponse<Detail> | undefined> {
-  const randomID = Math.ceil(Math.random() * 10)
+  const randomID = Math.ceil(Math.random() * 800)
   try {
     const response = await apiCall.get(
       `/pokemon/${randomID}`
