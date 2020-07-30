@@ -16,13 +16,6 @@ class DetailsModule extends VuexModule {
     const details = await fetchDetails(actualURL)
     return { details }
   }
-
-  // @MutationAction({ mutate: ['details'] })
-  // public async loadName(url: string) {
-  //   const actualURL = url
-  //   const details = await fetchName(actualURL)
-  //   return { details }
-  // }
 }
 
 export default DetailsModule
