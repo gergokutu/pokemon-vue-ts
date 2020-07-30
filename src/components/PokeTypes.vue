@@ -1,5 +1,5 @@
 <template>
-  <div class="poke-types" @click="toggleDetails">
+  <div class="poke-types">
     {{ name }}
   </div>
 </template>
@@ -11,7 +11,6 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 export default class PokeTypes extends Vue {
   @Prop() readonly name!: string
   @Prop() readonly url!: string
-  @Prop() readonly toggleDetails!: () => void
 }
 </script>
 

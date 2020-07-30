@@ -23,6 +23,12 @@
     justify-content: space-between;
   }
 
+  @media screen and (max-width: 576px) {
+    .navbar {
+      justify-content: center;
+    }
+  } 
+
   a.nav-link {
     text-decoration: underline;
   }
