@@ -1,23 +1,27 @@
-# pokemon-vue-ts
+# Pokedex
 
-Browse information about Pokemons in the application. Data fetched with axios from pokeapi.co...
+Browse information about Pokemons in the application. Data is fetched from https://pokeapi.co/.
 
-You can try the application here:...
+## :point_right: [checkout the deployed version here](https://pokemons-vue-ts.netlify.app) :point_left:
 
 ## Features
 
 - browse Pokemons
 - check Pokemon details
 - get random details
-- see all the existing types of Pokemons
+- see the list of existing Pokemon types
 
 ## Technologies
 
-- Vue / Vuex
+- Vue / Vue-Router / Vuex
 - BootstrapVue
 - TypeScript
 - Axios
 - HTML / CSS
+
+Additional libraries installed for decorators:
+- vue-class-component, vue-property-decorator
+- vuex-class, vuex-module-decorators
 
 ## Project setup
 ```
