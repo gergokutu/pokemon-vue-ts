@@ -17,7 +17,7 @@
     </b-card>
 
     <div class="back-button">
-      <b-button @click="toggle" variant="info">Back</b-button>
+      <b-button @click="toggleShowDetails" variant="info">Back</b-button>
     </div>
   </div>
 </template>
@@ -37,10 +37,6 @@ export default class Details extends Vue {
   
   @pokesModule.Mutation
   public toggleShowDetails!: () => void
-
-  private toggle(): void {
-    this.toggleShowDetails()
-  }
 
   @detailsModule.State
   public details!: Detail
