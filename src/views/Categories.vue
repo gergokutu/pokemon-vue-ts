@@ -11,6 +11,7 @@
     </div>
     
     <div class="names-container" v-else>
+      <h1>Pokemons of '{{ namesInType.data.name }}' type</h1>
       <div class="name-list" v-for="pokemon in namesInType.data.pokemon" :key="pokemon.name">
         {{ pokemon.pokemon.name }}
       </div>
