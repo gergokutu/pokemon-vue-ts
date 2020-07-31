@@ -18,9 +18,13 @@ export default class PokeTypes extends Vue {
   @categoriesModule.Mutation
   public toggleShowNames!: () => void
 
+  @categoriesModule.Action
+  public loadNames!: (url: string) => void
+
   private showNames(url: string): void {
     this.toggleShowNames()
     console.log(url)
+    this.loadNames(url)
   }
 }
 </script>

@@ -28,6 +28,17 @@ export async function fetchDetails(actualURL: string): Promise<AxiosResponse<Det
   }
 }
 
+export async function fetchNames(url: string): Promise<AxiosResponse<Detail> | undefined> {
+  try {
+    const response = await axios.get(
+      url
+    )
+    return response
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 export async function randomPokemon(): Promise<AxiosResponse<Detail> | undefined> {
   const randomID = Math.ceil(Math.random() * 800)
   try {

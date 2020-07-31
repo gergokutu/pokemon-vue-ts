@@ -36,6 +36,9 @@ export default class Categories extends Vue {
   public categories!: { data: { results: Array<PokeType> }}
 
   @categoriesModule.State
+  public namesInType!: object
+
+  @categoriesModule.State
   public showNames!: boolean
 
   @categoriesModule.Mutation
