@@ -41,7 +41,6 @@ export default class PokeCard extends Vue {
   public toggleShowDetails!: () => void
 
   private showDetails(url: string): void {
-    console.log('Show details:', url)
     this.toggleShowDetails()
     this.loadDetails(url)
   }

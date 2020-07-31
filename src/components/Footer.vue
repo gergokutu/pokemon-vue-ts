@@ -27,7 +27,7 @@
     .navbar {
       justify-content: center;
     }
-  } 
+  }
 
   a.nav-link {
     text-decoration: underline;

@@ -8,7 +8,7 @@ import { Detail } from '../model'
 })
 
 class RandomModule extends VuexModule {
-  public details: Detail = { data: { sprites: {  }}}
+  public details: Detail = { data: { sprites: {  } }}
 
   @MutationAction({ mutate: ['details'] })
   public async loadRandom() {
