@@ -12,6 +12,7 @@ Browse information about Pokemons in the application. Data is fetched from https
 - check Pokemon details
 - get random details
 - see the list of existing Pokemon types
+- see the list of Pokemons in the chosen type 
 
 ## Technologies
 
