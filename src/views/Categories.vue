@@ -1,6 +1,6 @@
 <template>
   <div class="categories">
-    <div v-if="!showNames">
+    <div class="type-list" v-if="!showNames">
       <h1>Existing Pokemon types ({{ categories.data.results.length }})</h1>
       <PokeTypes
         v-for="type in categories.data.results"
@@ -10,8 +10,10 @@
       />
     </div>
     
-    <div class="Names" v-else>
-      List of names...
+    <div class="names-container" v-else>
+      <div class="name-list" v-for="pokemon in namesInType.data.pokemon" :key="pokemon.name">
+        {{ pokemon.pokemon.name }}
+      </div>
       <b-button @click="toggleShowNames" variant="info">Back</b-button>
     </div>
   </div>

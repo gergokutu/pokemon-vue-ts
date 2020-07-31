@@ -23,7 +23,6 @@ export default class PokeTypes extends Vue {
 
   private showNames(url: string): void {
     this.toggleShowNames()
-    console.log(url)
     this.loadNames(url)
   }
 }

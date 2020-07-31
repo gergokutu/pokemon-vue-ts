@@ -1,6 +1,6 @@
 import { VuexModule, Module, MutationAction, Mutation } from 'vuex-module-decorators'
 import { fetchCategories, fetchNames } from '../api'
-import { PokeType } from '../model'
+import { PokeType, PokeName } from '../model'
 
 @Module({
   namespaced: true,
@@ -10,7 +10,7 @@ import { PokeType } from '../model'
 export default class CategoriesModule extends VuexModule {
   public categories: { data: { results: Array<PokeType> }} = { data: { results: [] }}
   public showNames = false
-  public namesInType: object = {}
+  public namesInType: { data: { pokemon: Array<PokeName> }} = { data: { pokemon: [] }}
 
   @Mutation
   public toggleShowNames(): void {
