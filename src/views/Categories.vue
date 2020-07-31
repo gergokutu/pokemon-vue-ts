@@ -11,11 +11,15 @@
     </div>
     
     <div class="names-container" v-else>
-      <h1>Pokemons of '{{ namesInType.data.name }}' type</h1>
-      <div class="name-list" v-for="pokemon in namesInType.data.pokemon" :key="pokemon.name">
+      <h1>Pokemons of '{{ namesInType.data.name }}' type ({{ namesInType.data.pokemon.length }})</h1>
+     
+      <div class="names-list" v-for="pokemon in namesInType.data.pokemon" :key="pokemon.name">
         {{ pokemon.pokemon.name }}
       </div>
-      <b-button @click="toggleShowNames" variant="info">Back</b-button>
+      
+      <div class="back-button">
+        <b-button @click="toggleShowNames" variant="info" size="lg">Back</b-button>
+      </div>
     </div>
   </div>
 </template>
@@ -57,7 +61,21 @@ export default class Categories extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.categories > h1 {
+h1 {
   margin-top: 20px;
 }
+
+.back-button {
+  margin-top: 20px;
+}
+
+.names-list {
+  margin: 0.5rem;
+}
+
+// .names-list:hover {
+//   font-weight: bold;
+//   color: green;
+//   cursor: pointer;
+// }
 </style>

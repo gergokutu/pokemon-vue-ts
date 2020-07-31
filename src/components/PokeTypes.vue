@@ -30,7 +30,12 @@ export default class PokeTypes extends Vue {
 
 <style lang="scss" scoped>
 .poke-types {
+  margin: 0.5rem;
+}
+
+.poke-types:hover {
   font-weight: bold;
-  margin: 10px;
+  color: green;
+  cursor: pointer;
 }
 </style>
