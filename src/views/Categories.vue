@@ -43,7 +43,6 @@ import Details from '@/components/Details.vue'
 
 import { namespace } from 'vuex-class'
 const categoriesModule = namespace('categoriesModule')
-const detailsModule = namespace('detailsModule')
 const pokesModule = namespace('pokesModule')
 
 import { PokeType } from '@/store/model'

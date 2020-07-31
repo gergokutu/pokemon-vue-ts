@@ -31,11 +31,11 @@
 
     <div class="nav-buttons-container" v-show="!showDetails">
       <div class="nav-button" v-show="pokemons.data.previous">
-        <b-button size="md" @click="sortFalse; loadPokemons(pokemons.data.previous)">Prev Group</b-button>
+        <b-button size="md" @click="sortFalse(); loadPokemons(pokemons.data.previous)">Prev Group</b-button>
       </div>
-      
+
       <div class="nav-button" v-show="pokemons.data.next">
-        <b-button size="md" @click="sortFalse; loadPokemons(pokemons.data.next)">Next Group</b-button>
+        <b-button size="md" @click="sortFalse(); loadPokemons(pokemons.data.next)">Next Group</b-button>
       </div>
     </div>  
   </div>
