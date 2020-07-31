@@ -11,14 +11,25 @@
     </div>
     
     <div class="names-container" v-else>
-      <h1>Pokemons of '{{ namesInType.data.name }}' type ({{ namesInType.data.pokemon.length }})</h1>
+      <h1 v-show="!showDetails">Pokemons of '{{ namesInType.data.name }}' type ({{ namesInType.data.pokemon.length }})</h1>
      
-      <div class="names-list" v-for="pokemon in namesInType.data.pokemon" :key="pokemon.name">
-        {{ pokemon.pokemon.name }}
+      <div class="card-container">
+        <PokeCard
+          class="names-list"
+          v-for="pokemon in namesInType.data.pokemon"
+          :key="pokemon.name"
+          :name="pokemon.pokemon.name"
+          :url="pokemon.pokemon.url"
+          v-show="!showDetails"
+        />
       </div>
-      
+
+      <div class="details-container" v-show="showDetails">
+        <Details />
+      </div>
+
       <div class="back-button">
-        <b-button @click="toggleShowNames" variant="info" size="lg">Back</b-button>
+        <b-button @click="toggleShowNames" variant="info" size="lg" v-show="!showDetails">Back</b-button>
       </div>
     </div>
   </div>
@@ -27,15 +38,21 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import PokeTypes from '@/components/PokeTypes.vue'
+import PokeCard from '@/components/PokeCard.vue'
+import Details from '@/components/Details.vue'
 
 import { namespace } from 'vuex-class'
 const categoriesModule = namespace('categoriesModule')
+const detailsModule = namespace('detailsModule')
+const pokesModule = namespace('pokesModule')
 
 import { PokeType } from '@/store/model'
 
 @Component({
   components: {
-    PokeTypes
+    PokeTypes,
+    PokeCard,
+    Details
   }
 })
 export default class Categories extends Vue {
@@ -50,6 +67,9 @@ export default class Categories extends Vue {
 
   @categoriesModule.Mutation
   public toggleShowNames!: () => void
+
+  @pokesModule.State
+  public showDetails!: boolean
 
   @categoriesModule.Action
   public loadCategories!: () => void
@@ -78,4 +98,24 @@ h1 {
 //   color: green;
 //   cursor: pointer;
 // }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 15%;
+  margin-top: 0;
+  justify-content: center;
+  width: 70%;
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 15%;
+  margin-top: 5%;
+  justify-content: center;
+  width: 70%;
+}
 </style>
