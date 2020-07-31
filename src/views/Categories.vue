@@ -29,7 +29,14 @@
       </div>
 
       <div class="back-button">
-        <b-button @click="toggleShowNames" variant="info" size="lg" v-show="!showDetails">Back</b-button>
+        <b-button
+          @click="toggleShowNames"
+          variant="info"
+          size="lg"
+          v-show="!showDetails"
+        >
+          Back to Types
+        </b-button>
       </div>
     </div>
   </div>
