@@ -28,6 +28,7 @@ export async function fetchDetails(actualURL: string): Promise<AxiosResponse<Det
   }
 }
 
+
 export async function fetchNames(url: string): Promise<AxiosResponse<Detail> | undefined> {
   try {
     const response = await axios.get(
