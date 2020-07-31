@@ -4,6 +4,8 @@ Browse information about Pokemons in the application. Data is fetched from https
 
 ## :point_right: [checkout the deployed version here](https://pokemons-vue-ts.netlify.app) :point_left:
 
+![](pokemons_show.mp4)
+
 ## Features
 
 - browse Pokemons
