@@ -12,6 +12,7 @@
     
     <div class="Names" v-else>
       List of names...
+      <b-button @click="toggleShowNames" variant="info">Back</b-button>
     </div>
   </div>
 </template>
@@ -36,6 +37,9 @@ export default class Categories extends Vue {
 
   @categoriesModule.State
   public showNames!: boolean
+
+  @categoriesModule.Mutation
+  public toggleShowNames!: () => void
 
   @categoriesModule.Action
   public loadCategories!: () => void
