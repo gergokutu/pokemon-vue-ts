@@ -1,12 +1,18 @@
 <template>
   <div class="categories">
-    <h1>Existing Pokemon types ({{ categories.data.results.length }})</h1>
-    <PokeTypes
-      v-for="type in categories.data.results"
-      :name="type.name"
-      :url="type.url"
-      :key="type.name"
-    />
+    <div v-if="!showNames">
+      <h1>Existing Pokemon types ({{ categories.data.results.length }})</h1>
+      <PokeTypes
+        v-for="type in categories.data.results"
+        :name="type.name"
+        :url="type.url"
+        :key="type.name"
+      />
+    </div>
+    
+    <div class="Names" v-else>
+      List of names...
+    </div>
   </div>
 </template>
 
@@ -27,6 +33,9 @@ import { PokeType } from '@/store/model'
 export default class Categories extends Vue {
   @categoriesModule.State
   public categories!: { data: { results: Array<PokeType> }}
+
+  @categoriesModule.State
+  public showNames!: boolean
 
   @categoriesModule.Action
   public loadCategories!: () => void

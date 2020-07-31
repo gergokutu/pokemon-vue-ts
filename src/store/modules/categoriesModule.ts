@@ -9,6 +9,7 @@ import { PokeType } from '../model'
 
 export default class CategoriesModule extends VuexModule {
   public categories: { data: { results: Array<PokeType> }} = { data: { results: [] }}
+  public showNames = false
 
   @MutationAction({ mutate: ['categories'] })
   public async loadCategories() {
