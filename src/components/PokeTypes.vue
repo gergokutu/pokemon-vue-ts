@@ -1,5 +1,5 @@
 <template>
-  <div class="poke-types" @click="toggleShowNames">
+  <div class="poke-types" @click="showNames(url)">
     {{ name }}
   </div>
 </template>
@@ -17,6 +17,11 @@ export default class PokeTypes extends Vue {
 
   @categoriesModule.Mutation
   public toggleShowNames!: () => void
+
+  private showNames(url: string): void {
+    this.toggleShowNames()
+    console.log(url)
+  }
 }
 </script>
 
