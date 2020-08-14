@@ -27,7 +27,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Details from '@/components/Details.vue'
-import { Detail } from '@/store/model'
+import { Detail } from '../store/model'
 
 import { namespace } from 'vuex-class'
 const randomModule = namespace('randomModule')

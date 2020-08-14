@@ -31,11 +31,21 @@
 
     <div class="nav-buttons-container" v-show="!showDetails">
       <div class="nav-button" v-show="pokemons.data.previous">
-        <b-button size="md" @click="sortFalse(); loadPokemons(pokemons.data.previous)">Prev Group</b-button>
+        <b-button
+          size="md" 
+          @click="sortFalse(); loadPokemons(pokemons.data.previous)"
+        >
+          Prev Group
+        </b-button>
       </div>
 
       <div class="nav-button" v-show="pokemons.data.next">
-        <b-button size="md" @click="sortFalse(); loadPokemons(pokemons.data.next)">Next Group</b-button>
+        <b-button 
+          size="md"
+          @click="sortFalse(); loadPokemons(pokemons.data.next)"
+        >
+          Next Group
+        </b-button>
       </div>
     </div>  
   </div>
@@ -44,7 +54,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import PokeCard from '@/components/PokeCard.vue'
-import { IPokeCard } from '@/store/model'
+import { IPokeCard } from '../store/model'
 import Details from '@/components/Details.vue'
 
 import { namespace } from 'vuex-class'
@@ -69,7 +79,9 @@ export default class Pokemons extends Vue {
   public sortPokes() {
     this.sorted = !this.sorted
     const array = [...this.pokemons.data.results]
-    this.sortedPokemons = array.sort((a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name))
+    this.sortedPokemons = array.sort(
+      (a: IPokeCard, b: IPokeCard) => a.name.localeCompare(b.name)
+    )
   }
 
   @pokesModule.State

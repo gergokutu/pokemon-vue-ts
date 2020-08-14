@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { Detail } from '@/store/model'
+import { Detail } from '../store/model'
 
 import { namespace } from 'vuex-class'
 const pokesModule = namespace('pokesModule')

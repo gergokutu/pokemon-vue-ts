@@ -52,7 +52,7 @@ import { namespace } from 'vuex-class'
 const categoriesModule = namespace('categoriesModule')
 const pokesModule = namespace('pokesModule')
 
-import { PokeType } from '@/store/model'
+import { PokeType } from '../store/model'
 
 @Component({
   components: {
@@ -98,12 +98,6 @@ h1 {
 .names-list {
   margin: 0.5rem;
 }
-
-// .names-list:hover {
-//   font-weight: bold;
-//   color: green;
-//   cursor: pointer;
-// }
 
 .card-container {
   display: flex;
